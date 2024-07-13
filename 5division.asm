@@ -16,7 +16,7 @@
                   lea dx, m1
                   int 21H              ; devolución del control a (DOS)
 
-                  mov ah, 1
+                  mov ah, 1            ;esperamos el valor 1
                   int 21H
                   sub AL, 30H          ;dx de bajo nivel, pasar de ASCII a Hexadecimal
                   mov numero1, al
@@ -25,14 +25,14 @@
                   lea dx, m2
                   int 21H
 
-                  mov ah, 1
+                  mov ah, 1            ;esperamos el valor 2
                   int 21H
                   sub AL, 30H
                   mov numero2, al
 
                   mov al, numero1
                   xor ah, ah
-                  div numero2
+                  div numero2          ; Operación
                   add al, 30H
                   mov division, al
 
